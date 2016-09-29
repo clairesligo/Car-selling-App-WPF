@@ -1,0 +1,7 @@
+1,Toyota,Corolla,3500,2004,Red,120000,goodcar,corolla.jpg,/images/cars.png,Hatchback
+1,Toyota,Rav4,3000,2003,Silver,178000,New NCT,rav4.jpg,/images/cars.png,SUV
+1,Ford,Focus,8500,2009,Green,110000,Recently Serviced,focus.jpg,/images/cars.png,Saloon
+2,Ford,Transit,13000,2011,White,234000,New MOT,transit.jpeg,/images/van.png,Medium,CombiVan
+3,Ducati,1188,7450,2009,Yellow,125000,Well Looked after,ducati.jpg,/images/motorcycle.png,Sports
+3,Kawasaki,1560,8500,2010,Green,134000,Clean Bike,kawasaki.jpg,/images/motorcycle.png,TrailBike
+1,ford,mondeo,700,2003,Silver,181000,must sell,mondeo.jpg,/images/cars.png,Saloon

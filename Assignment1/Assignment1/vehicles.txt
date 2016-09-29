@@ -1,0 +1,6 @@
+1,Toyota,Corolla,3500,2004,Red,120000,goodcar,corolla.jpg,Hatchback
+1,Toyota, Rav4, 3000, 2003, silver, 178000,New NCT,rav4.jpg,SUV
+1,Ford,Focus,8500,2009,green,110000,Recently Serviced,focus.jpg,Saloon
+2,Ford,Transit,13000,2011,grey,234000,New MOT,transit.jpeg,Medium, CombiVan
+3,Ducati,1188,7450,2009,yellow,25000,Well Looked after,ducati.jpg,Sport
+3,Mazarati,1560,8500,2010,Red,34000,Clean Bike,ducati.jpg,Sport

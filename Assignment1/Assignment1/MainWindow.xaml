@@ -1,0 +1,71 @@
+﻿<Window x:Class="Assignment1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="625"
+        Loaded="Window_Loaded"
+        Background="Red"
+        >
+    <Window.Resources>
+        <DataTemplate x:Key="lbxCarsTemplate">
+            <Grid MaxWidth="300px" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45px"></ColumnDefinition>
+                    <ColumnDefinition Width="180px"></ColumnDefinition>
+                    <ColumnDefinition Width="45px"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding imageType }" Grid.Column="0" Grid.RowSpan="2" Height="40px" Width="40px" ></Image>
+                <StackPanel  Orientation="Horizontal" Grid.Column="1" Grid.Row="0" >
+                    <TextBlock Text="Make: " FontWeight="Bold" Margin="1,1,5,1" ></TextBlock>
+                    <TextBlock Text="{Binding Make}" Margin="1,1,5,1"></TextBlock>
+                    <TextBlock Text="Model: " FontWeight="Bold" Margin="1,1,5,1"></TextBlock>
+                    <TextBlock Text="{Binding Model}" ></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Grid.Column="1" Grid.Row="1"  >
+                    <TextBlock Text="Price: " FontWeight="Bold" Margin="1,1,5,1"></TextBlock>
+                    <TextBlock Text="{Binding Price}" Margin="1,1,5,1"></TextBlock>
+                    <TextBlock Text="Mileage: " FontWeight="Bold" Margin="1,1,5,1"></TextBlock>
+                    <TextBlock Text="{Binding Mileage}" ></TextBlock>
+                </StackPanel>
+
+                <TextBlock Background="{Binding Colour}"  Text="{Binding Colour}"  Height="40px" Width="40px" Grid.Column="2" Grid.RowSpan="2"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image x:Name="image" HorizontalAlignment="Left"  Source="/images/all.png" Height="30" Margin="41.188,10,0,0" VerticalAlignment="Top" Width="32.679" RenderTransformOrigin="0.141,0.224"/>
+        <RadioButton GroupName="radioBtns" x:Name="radioButton"  Content="All" FontWeight="Bold" HorizontalAlignment="Left" Margin="78.867,13.01,0,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
+        <Image x:Name="imageCar" HorizontalAlignment="Left" Source="/images/cars.png" Height="75" Margin="150,-4,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="3.086,0.478"/>
+        <RadioButton GroupName="radioBtns" x:Name="radioButton1" Content="Cars" FontWeight="Bold" HorizontalAlignment="Left" Margin="223.831,13.01,0,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
+        <Image x:Name="imageBike" Source="/images/motorcycle.png" Height="63" Margin="298,8,262,0" VerticalAlignment="Top"/>
+        <RadioButton GroupName="radioBtns" x:Name="radioButton2" Content="Bikes" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,13.01,197.446,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
+        <Image x:Name="imageVan" HorizontalAlignment="Right" Source="/images/van.png" Height="50" Margin="0,2,110,0" VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.016,0.463"/>
+        <RadioButton GroupName="radioBtns" x:Name="radioButton3" Content="Vans" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,16.02,40,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
+
+
+        <ListBox x:Name="lbxCars" ItemTemplate="{StaticResource lbxCarsTemplate}" Background="red" Foreground="Black" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Left" Margin="18,101.811,0,50"  Width="300" SelectionChanged="lbxCars_SelectionChanged"/>
+        <Label x:Name="label" Content="Vehicle Details" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,45,119.901,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtDesc" HorizontalAlignment="Right" Margin="0,172,34.372,85" TextWrapping="Wrap"  Width="233.364" RenderTransformOrigin="0.537,0.59"/>
+
+        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="33,0,0,20" VerticalAlignment="Bottom" Width="95" Click="btnLoad_Click" Background="Black" Foreground="Red" FontWeight="Bold" />
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="150,0,0,20" VerticalAlignment="Bottom" Width="95" Click="btnSave_Click" Background="Black" Foreground="Red" FontWeight="Bold" />
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Center" Margin="240,0,225,20" VerticalAlignment="Bottom" Width="95"  Click="btnAdd_Click" Background="Black" Foreground="Red" FontWeight="Bold"  />
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Right" Margin="0,0,138,20" VerticalAlignment="Bottom" Width="95" Click="btnEdit_Click" Background="Black" Foreground="Red" FontWeight="Bold" />
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Right" Margin="0,0,24,20" VerticalAlignment="Bottom" Width="95" Click="btnDelete_Click" Background="Black" Foreground="Red" FontWeight="Bold" />
+
+        <ComboBox x:Name="cbxFilter" HorizontalAlignment="Left" Margin="106,61,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxFilter_SelectionChanged"/>
+        <Label x:Name="label1" Content="Sort By:" FontWeight="Bold" HorizontalAlignment="Left" Margin="46.188,60.96,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="imgDesc" Source="/images/car.jpg" HorizontalAlignment="Right" Margin="0,70.96,76.774,0" Width="163.792" Height="101.04" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="48" Margin="18,2,0,0" VerticalAlignment="Top" Width="575"/>
+        <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Height="270" Margin="18,102,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button x:Name="btnFinance" Content="Click for Finance" HorizontalAlignment="Left" Margin="431,352,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="3.868,-0.55" Background="Black" Foreground="Red" FontWeight="Bold" Click="btnFinance_Click"  />
+
+    </Grid>
+</Window>
